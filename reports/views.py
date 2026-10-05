@@ -132,7 +132,7 @@ class MonthlyTrendView(APIView):
                 date__year=month_date.year,
                 date__month=month_date.month
             ).aggregate(
-                total=Sum("amount")
+                total=Sum("amount_in_base_currency")
             )["total"] or Decimal("0.00")
 
             if previous_total is None:
