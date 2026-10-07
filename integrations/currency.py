@@ -69,5 +69,4 @@ def get_exchange_rate(from_currency, to_currency="INR"):
 def convert_to_inr(amount, from_currency):
     rate = get_exchange_rate(from_currency, "INR")
     converted_amount = Decimal(str(amount)) * rate
-
     return converted_amount.quantize(Decimal("0.01"))
